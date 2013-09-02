@@ -50,11 +50,11 @@ For detail, see `comment-dwim'."
 
 
 ;; define several class of keywords
-(setq NED-keywords '("parameters:" "import") )
-(setq NED-types '("network" "channel"))
-(setq NED-constants '("pppg"))
-(setq NED-events '("@display"))
-(setq NED-functions '("<-->"))
+(setq NED-keywords '("gates"  "parameters" "connections" "submodules" "inet" "net" "ned" "default" "if" "for" "<--") )
+(setq NED-types '("network"  "IPv4NetworkConfigurator" "simple" "module" "int" "bool" "string"))
+(setq NED-constants '("true" "false"))
+(setq NED-events '("display"))
+(setq NED-functions '("package" "extends" "import" "like"))
 
 
 
@@ -64,7 +64,8 @@ For detail, see `comment-dwim'."
 (setq NED-constant-regexp (regexp-opt NED-constants 'words))
 (setq NED-event-regexp (regexp-opt NED-events 'words))
 (setq NED-functions-regexp (regexp-opt NED-functions 'words))
-
+(setq NED-functions-regexp (regexp-opt NED-functions 'words))
+(setq NED-operators-regexp "<?-->?\\|\\.\\.\\|=")
 ;; clear memory
 (setq NED-keywords nil)
 (setq NED-types nil)
@@ -82,9 +83,9 @@ For detail, see `comment-dwim'."
     (,NED-event-regexp . font-lock-builtin-face)
     (,NED-functions-regexp . font-lock-function-name-face)
     (,NED-keywords-regexp . font-lock-keyword-face)
-    ;; note: order above matters. “NED-keywords-regexp” goes last because
-    ;; otherwise the keyword “state” in the function “state_entry”
-    ;; would be highlighted.
+    (,NED-operators-regexp . font-lock-keyword-face)
+    ;; note: order above matters.
+
 ))
 
 

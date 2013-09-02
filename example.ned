@@ -4,7 +4,7 @@
 // author: Thomas Reschka
 //
 
-package inet.examples.inet.tcpsack;
+// package inet.examples.inet.tcpsack;
 
 import inet.networklayer.autorouting.ipv4.IPv4NetworkConfigurator;
 import inet.nodes.inet.Router;
