@@ -25,6 +25,30 @@
 
 ;;; Commentary
 
+
+;; command to comment/uncomment text
+(defun ned-comment-dwim (arg)
+  "Comment or uncomment current line or region in a smart way.
+For detail, see `comment-dwim'."
+  (interactive "*P")
+  (require 'newcomment)
+  (let (
+        (comment-start "//") (comment-end "")
+        )
+    (comment-dwim arg)))
+
+;; syntax table
+(defvar ned-syntax-table nil "Syntax table for `ned-mode'.")
+(setq ned-syntax-table
+      (let ((synTable (make-syntax-table)))
+
+	;; C++ style comment “// …” 
+	(modify-syntax-entry ?\/ ". 12b" synTable)
+	(modify-syntax-entry ?\n "> b" synTable)
+        synTable))
+
+
+
 ;; define several class of keywords
 (setq NED-keywords '("parameters:" "import") )
 (setq NED-types '("network" "channel"))
@@ -69,7 +93,7 @@
 (define-derived-mode ned-mode fundamental-mode
   "ned mode"
   "Major mode for editing NED (NEtwork Description)…"
-
+  :syntax-table ned-syntax-table
   ;; code for syntax highlighting
   (setq font-lock-defaults '((NED-font-lock-keywords)))
 
@@ -80,6 +104,7 @@
   (setq NED-events-regexp nil)
   (setq NED-functions-regexp nil)
 )
+
 
 
 (provide 'ned-mode)
