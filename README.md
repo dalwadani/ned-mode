@@ -7,12 +7,15 @@ Our aim now is to provide: syntax highlighting, indentation support and a few co
 
 
 (This section is based on the work done in [coffee-mode][cm])
+
+### TAB Theory
+
 It goes like this: when you press `TAB`, we indent the line unless
 doing so would make the current line more than two indentation levels
 deepers than the previous line. If that's the case, remove all
 indentation.
 
-### TAB Theory
+
 Consider this code, with point at the position indicated by the
 caret:
 
