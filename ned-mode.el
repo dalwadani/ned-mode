@@ -199,7 +199,7 @@ For detail, see `comment-dwim'."
   ;; too. Makes it easy to write multi-line comments (like the one I'm
   ;; writing right now).
   (when (ned-previous-line-is-comment)
-    (insert "# ")))
+    (insert "// ")))
 
 (defun ned-dedent-line-backspace (arg)
   "Unindent to increment of `tab-width' with ARG==1 when
