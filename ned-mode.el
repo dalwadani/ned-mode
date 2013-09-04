@@ -232,7 +232,7 @@ next line should probably be indented.")
   "Builds a regexp out of `ned-indenters-bol' words."
   (regexp-opt ned-indenters-bol 'words))
 
-(defvar ned-indenters-eol '(?> ?{ ?\[)
+(defvar ned-indenters-eol '(?: ?{)
   "Single characters at the end of a line that mean the next line
 should probably be indented.")
 
