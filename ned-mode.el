@@ -272,7 +272,7 @@ END lie."
 (setq NED-types '("network"  "IPv4NetworkConfigurator" "simple" "module" "int" "bool" "string" "input" "output" "xml" "channel"))
 (setq NED-constants '("true" "false"))
 (setq NED-events '("display"))
-(setq NED-functions '("package" "extends" "import" "like" "normal" "truncnormal" "default"))
+(setq NED-functions '("package" "extends" "import" "like" "normal" "truncnormal" "default" "sizeof"))
 
 
 
