@@ -268,8 +268,8 @@ END lie."
 
 
 ;; define several class of keywords
-(setq NED-keywords '("gates"  "parameters" "connections" "submodules" "inet" "net" "ned"  "if" "for" "types") )
-(setq NED-types '("network"  "IPv4NetworkConfigurator" "simple" "module" "int" "bool" "string" "input" "output" "xml" "channel"))
+(setq NED-keywords '("gates"  "parameters" "connections" "submodules" "net"  "if" "for" "types") )
+(setq NED-types '("network"  "simple" "module" "int" "bool" "string" "input" "output" "xml" "channel"))
 (setq NED-constants '("true" "false"))
 (setq NED-events '("display"))
 (setq NED-functions '("package" "extends" "import" "like" "normal" "truncnormal" "default" "sizeof"))
@@ -294,6 +294,7 @@ END lie."
 
 ;; create the list for font-lock.
 ;; each class of keyword is given a particular face
+
 (setq NED-font-lock-keywords
   `(
     (,NED-type-regexp . font-lock-type-face)
