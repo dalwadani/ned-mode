@@ -2,6 +2,7 @@ NED Major Mode
 ========
 An Emacs major mode for NED files which are used in [OMNeT++][omnet].
 Our aim now is to provide: syntax highlighting, indentation support and a few commands.
+Now it has a basic implementation of autocomlation for packages name.
 
 ## Indentation
 
